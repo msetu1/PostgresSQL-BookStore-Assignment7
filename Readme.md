@@ -1,6 +1,6 @@
 Bonus Section:
 
-1. What is PostgreSQL?
+1. What is PostgreSQL? <br/>
  Ans: PostgreSQL একটি শক্তিশালী ও ওপেন-সোর্স রিলেশনাল ডেটাবেজ সিস্টেম। 
 
 2. What is the purpose of a database schema in PostgreSQL?
