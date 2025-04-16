@@ -45,11 +45,11 @@ Ans:
 
 10.How can you calculate aggregate functions like COUNT(), SUM(), and AVG() in PostgreSQL?
  Ans: 
-  -COUNT(): মোট কয়টি রেকর্ড আছে তা গণনা করে।
+  - COUNT(): মোট কয়টি রেকর্ড আছে তা গণনা করে।
 
-  -SUM(): নির্দিষ্ট কলামের সব মান যোগ করে।
+  - SUM(): নির্দিষ্ট কলামের সব মান যোগ করে।
 
-  -AVG(): একটি কলামের গড় বের করে।
+  - AVG(): একটি কলামের গড় বের করে।
    উদাহরণ:
     SELECT COUNT(*) FROM books;
     SELECT SUM(price) FROM books;
