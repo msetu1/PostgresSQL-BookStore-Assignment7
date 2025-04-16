@@ -42,6 +42,50 @@ INSERT INTO customers (name, email) VALUES
 ('Bob', 'bob@email.com'),
 ('Charlie', 'charlie@email.com');
 
+-- Insert orders data
+INSERT INTO orders (customer_id, book_id, quantity) VALUES
+(1, 2, 1),
+(2, 1, 1),
+(1, 3, 2);
+
 -- select * all data 
 SELECT * FROM books;
 SELECT * FROM customers;
+SELECT * FROM orders;
+
+-- PostgreSQL Problems & Solving Part
+
+-- Problem 1: Find books that are out of stock
+SELECT * FROM books
+    WHERE stock=0;
+-- SELECT title FROM books
+--  WHERE stock=0;
+
+-- Problem 2: Retrieve the most expensive book in the store.
+SELECT * FROM books ORDER BY price DESC LIMIT 1;
+
+-- Problem 3: Find the total number of orders placed by each customer.
+SELECT customers.name, COUNT(orders.id) as total_order FROM customers
+    LEFT JOIN orders ON orders.customer_id = customers.id
+    GROUP BY customers.id;
+
+-- Problem 4: Calculate the total revenue generated from book sales
+SELECT SUM(books.price * orders.quantity) as total_revenue FROM orders
+    JOIN books ON books.id = orders.book_id;
+
+
+-- Problem 5: List all customers who have placed more than one order
+SELECT customers.name, COUNT(orders.id) as orders_count FROM customers
+    LEFT JOIN orders ON orders.customer_id = customers.id
+    GROUP BY customers.id
+    HAVING COUNT(orders.id)>1;
+
+-- Problem 6: Find the average price of books in the store
+SELECT ROUND(AVG(price),2) as average_price FROM books;
+
+-- Problem 7: Increase the price of all books published before 2000 by 10%
+-- solve korte pari na   
+
+-- Problem 8: Delete customers who haven't placed any orders
+DELETE FROM customers
+    WHERE id NOT IN ( SELECT DISTINCT customer_id FROM orders); 
