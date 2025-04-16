@@ -36,4 +36,12 @@ INSERT INTO books (title, author, price, stock, published_year) VALUES
 ('Refactoring', 'Martin Fowler', 50.00, 3, 1999),
 ('Database Design Principles', 'Jane Smith', 20.00, 0, 2018);
 
+-- Insert customers data
+INSERT INTO customers (name, email) VALUES
+('Alice', 'alice@email.com'),
+('Bob', 'bob@email.com'),
+('Charlie', 'charlie@email.com');
+
+-- select * all data 
 SELECT * FROM books;
+SELECT * FROM customers;
